@@ -38,12 +38,9 @@ class App extends React.Component {
     this.setState({ pets: newPets });
   }
 
-  onAdoptPet(id) {
-    const pets = this.state.pets.map(pet => {
-      return pet.id === petId ? { ...pet, isAdopted: true } : pet;
-    });
+  onAdoptPet(petId) {
+    const pets = this.state.pets.map(pet => (pet.id === petId ? { ...pet, isAdopted: true } : pet));
     this.setState({ pets });
-  };
   }
 
   render() {
